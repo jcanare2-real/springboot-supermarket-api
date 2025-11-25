@@ -31,7 +31,7 @@ spring.datasource.url=jdbc:postgresql://localhost:5432/supermarket_db
 spring.datasource.username=your_user
 spring.datasource.password=your_password
 spring.jpa.hibernate.ddl-auto=update
-
+```
 ---
 ## 🙏 Acknowledgments and Credits
 
