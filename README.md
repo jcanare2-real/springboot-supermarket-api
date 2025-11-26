@@ -10,6 +10,7 @@ Unlike the original implementation, this project focuses on industry best practi
 - **Dependency Injection by Constructor:** Replaced field injection (`@Autowired` on fields) with constructor-based injection to ensure immutability and easier unit testing.
 - **Robust Error Handling:** Implemented a `GlobalExceptionHandler` (`@ControllerAdvice`) to catch exceptions centrally.
 - **Standardized API Responses:** All errors return a consistent `ErrorResponse` JSON structure (timestamp, status, error, message), avoiding raw stack traces to the client.
+- **Dynamic API Documentation (OpenAPI/Swagger):** The project features Dynamic API Documentation using SpringDoc OpenAPI. This automatically generates the OpenAPI 3.x Definition File (/v3/api-docs) and an interactive Swagger UI (/swagger-ui.html). This significantly improves Developer Experience (DX) by providing a real-time, self-updating contract of the API schemas and responses.
 
 ## 🛠 Tech Stack & Patterns
 
