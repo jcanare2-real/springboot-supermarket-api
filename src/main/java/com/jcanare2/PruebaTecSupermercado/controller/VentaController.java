@@ -4,7 +4,6 @@ import com.todocodeacademy.PruebaTecSupermercado.dto.VentaDTO;
 import com.todocodeacademy.PruebaTecSupermercado.service.IVentaService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -45,7 +44,7 @@ public class VentaController {
     @Operation(
             summary = "Registrar una nueva venta",
             description = "Crea una nueva transacción de venta, incluyendo productos, cliente y sucursal.",
-            requestBody = @RequestBody(
+            requestBody = @io.swagger.v3.oas.annotations.parameters.RequestBody(
                     description = "Datos de la venta a registrar (requiere ítems, cliente, etc.)",
                     required = true,
                     content = @Content(schema = @Schema(implementation = VentaDTO.class))

@@ -4,7 +4,6 @@ import com.todocodeacademy.PruebaTecSupermercado.dto.ProductoDTO;
 import com.todocodeacademy.PruebaTecSupermercado.service.IProductoService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -39,7 +38,7 @@ public class ProductoController {
     @Operation(
             summary = "Crear un nuevo producto",
             description = "Registra un nuevo producto en el inventario, requiere datos válidos.",
-            requestBody = @RequestBody(
+            requestBody = @io.swagger.v3.oas.annotations.parameters.RequestBody(
                     description = "Datos del producto a crear (ID no requerido)",
                     required = true,
                     content = @Content(schema = @Schema(implementation = ProductoDTO.class))

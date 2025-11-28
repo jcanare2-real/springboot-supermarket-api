@@ -43,7 +43,7 @@ public class ProductoServiceImpl implements IProductoService {
         //Buscar producto a ver si existe
         Producto prod = this.getById(idProducto);
          prod.setNombre(productoDTO.getNombre());
-         prod.setCategoria(productoDTO.getNombre());
+         prod.setCategoria(productoDTO.getCategoria());
          prod.setPrecio(productoDTO.getPrecio());
          prod.setCantidad(productoDTO.getCantidad());
 

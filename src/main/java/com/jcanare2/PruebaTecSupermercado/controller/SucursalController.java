@@ -4,7 +4,6 @@ import com.todocodeacademy.PruebaTecSupermercado.dto.SucursalDTO;
 import com.todocodeacademy.PruebaTecSupermercado.service.ISucursalService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -45,7 +44,7 @@ public class SucursalController {
     @Operation(
             summary = "Crear una nueva sucursal",
             description = "Registra una nueva sucursal con datos de ubicación y contacto.",
-            requestBody = @RequestBody(
+            requestBody = @io.swagger.v3.oas.annotations.parameters.RequestBody(
                     description = "Datos de la sucursal a crear (ID no requerido)",
                     required = true,
                     content = @Content(schema = @Schema(implementation = SucursalDTO.class))

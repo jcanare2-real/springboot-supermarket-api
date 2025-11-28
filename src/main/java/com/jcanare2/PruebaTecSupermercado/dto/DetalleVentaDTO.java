@@ -1,5 +1,9 @@
 package com.todocodeacademy.PruebaTecSupermercado.dto;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.PositiveOrZero;
 import lombok.*;
 
 @Getter @Setter
@@ -9,8 +13,19 @@ import lombok.*;
 public class DetalleVentaDTO {
 
     private Long id;
+
+    @NotBlank
     private String nombreProd;
+
+    @NotNull
+    @Positive
     private Integer cantProd;
+
+    @NotNull
+    @PositiveOrZero
     private Double precio;
+
+    @NotNull
+    @PositiveOrZero
     private Double subTotal;
 }
