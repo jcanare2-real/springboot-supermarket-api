@@ -1,4 +1,4 @@
-package com.todocodeacademy.PruebaTecSupermercado.dto;
+package com.jcanare2.PruebaTecSupermercado.dto;
 
 import java.time.LocalDateTime;
 import java.util.Map;

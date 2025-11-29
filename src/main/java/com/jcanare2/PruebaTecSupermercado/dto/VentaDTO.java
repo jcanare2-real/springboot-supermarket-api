@@ -1,6 +1,6 @@
-package com.todocodeacademy.PruebaTecSupermercado.dto;
+package com.jcanare2.PruebaTecSupermercado.dto;
 
-import com.todocodeacademy.PruebaTecSupermercado.enums.EstadoEnum;
+import com.jcanare2.PruebaTecSupermercado.enums.EstadoEnum;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PositiveOrZero;

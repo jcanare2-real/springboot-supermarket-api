@@ -1,11 +1,11 @@
-package com.todocodeacademy.PruebaTecSupermercado.service.impl;
+package com.jcanare2.PruebaTecSupermercado.service.impl;
 
-import com.todocodeacademy.PruebaTecSupermercado.dto.SucursalDTO;
-import com.todocodeacademy.PruebaTecSupermercado.exception.NotFoundException;
-import com.todocodeacademy.PruebaTecSupermercado.mapper.Mapper;
-import com.todocodeacademy.PruebaTecSupermercado.model.Sucursal;
-import com.todocodeacademy.PruebaTecSupermercado.repository.SucursalRepository;
-import com.todocodeacademy.PruebaTecSupermercado.service.ISucursalService;
+import com.jcanare2.PruebaTecSupermercado.dto.SucursalDTO;
+import com.jcanare2.PruebaTecSupermercado.exception.NotFoundException;
+import com.jcanare2.PruebaTecSupermercado.mapper.Mapper;
+import com.jcanare2.PruebaTecSupermercado.model.Sucursal;
+import com.jcanare2.PruebaTecSupermercado.repository.SucursalRepository;
+import com.jcanare2.PruebaTecSupermercado.service.ISucursalService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -39,7 +39,7 @@ public class SucursalServiceImpl implements ISucursalService {
 
         Sucursal suc = this.getById(idSucursal);
         suc.setNombre(sucursalDTO.getNombre());
-        suc.setDireccion(suc.getDireccion());
+        suc.setDireccion(sucursalDTO.getDireccion());
 
         return Mapper.toDTO(repo.save(suc));
     }

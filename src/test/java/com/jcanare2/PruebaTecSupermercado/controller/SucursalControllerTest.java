@@ -1,9 +1,9 @@
-package com.todocodeacademy.PruebaTecSupermercado.controller;
+package com.jcanare2.PruebaTecSupermercado.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.todocodeacademy.PruebaTecSupermercado.dto.SucursalDTO;
-import com.todocodeacademy.PruebaTecSupermercado.exception.NotFoundException;
-import com.todocodeacademy.PruebaTecSupermercado.service.ISucursalService;
+import com.jcanare2.PruebaTecSupermercado.dto.SucursalDTO;
+import com.jcanare2.PruebaTecSupermercado.exception.NotFoundException;
+import com.jcanare2.PruebaTecSupermercado.service.ISucursalService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;

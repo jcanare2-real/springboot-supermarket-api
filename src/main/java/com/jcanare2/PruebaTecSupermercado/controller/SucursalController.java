@@ -1,7 +1,7 @@
-package com.todocodeacademy.PruebaTecSupermercado.controller;
+package com.jcanare2.PruebaTecSupermercado.controller;
 
-import com.todocodeacademy.PruebaTecSupermercado.dto.SucursalDTO;
-import com.todocodeacademy.PruebaTecSupermercado.service.ISucursalService;
+import com.jcanare2.PruebaTecSupermercado.dto.SucursalDTO;
+import com.jcanare2.PruebaTecSupermercado.service.ISucursalService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;

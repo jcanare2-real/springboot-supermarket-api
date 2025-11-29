@@ -1,12 +1,12 @@
-package com.todocodeacademy.PruebaTecSupermercado.mapper;
+package com.jcanare2.PruebaTecSupermercado.mapper;
 
-import com.todocodeacademy.PruebaTecSupermercado.dto.DetalleVentaDTO;
-import com.todocodeacademy.PruebaTecSupermercado.dto.ProductoDTO;
-import com.todocodeacademy.PruebaTecSupermercado.dto.SucursalDTO;
-import com.todocodeacademy.PruebaTecSupermercado.dto.VentaDTO;
-import com.todocodeacademy.PruebaTecSupermercado.model.Producto;
-import com.todocodeacademy.PruebaTecSupermercado.model.Sucursal;
-import com.todocodeacademy.PruebaTecSupermercado.model.Venta;
+import com.jcanare2.PruebaTecSupermercado.dto.DetalleVentaDTO;
+import com.jcanare2.PruebaTecSupermercado.dto.ProductoDTO;
+import com.jcanare2.PruebaTecSupermercado.dto.SucursalDTO;
+import com.jcanare2.PruebaTecSupermercado.dto.VentaDTO;
+import com.jcanare2.PruebaTecSupermercado.model.Producto;
+import com.jcanare2.PruebaTecSupermercado.model.Sucursal;
+import com.jcanare2.PruebaTecSupermercado.model.Venta;
 
 import java.util.stream.Collectors;
 

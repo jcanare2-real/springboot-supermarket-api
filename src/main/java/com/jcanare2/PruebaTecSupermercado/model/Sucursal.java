@@ -1,4 +1,4 @@
-package com.todocodeacademy.PruebaTecSupermercado.model;
+package com.jcanare2.PruebaTecSupermercado.model;
 
 import jakarta.persistence.*;
 import lombok.*;

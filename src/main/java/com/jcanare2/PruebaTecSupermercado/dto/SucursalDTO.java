@@ -1,4 +1,4 @@
-package com.todocodeacademy.PruebaTecSupermercado.dto;
+package com.jcanare2.PruebaTecSupermercado.dto;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

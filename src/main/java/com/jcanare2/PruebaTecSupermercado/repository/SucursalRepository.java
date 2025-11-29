@@ -1,6 +1,6 @@
-package com.todocodeacademy.PruebaTecSupermercado.repository;
+package com.jcanare2.PruebaTecSupermercado.repository;
 
-import com.todocodeacademy.PruebaTecSupermercado.model.Sucursal;
+import com.jcanare2.PruebaTecSupermercado.model.Sucursal;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

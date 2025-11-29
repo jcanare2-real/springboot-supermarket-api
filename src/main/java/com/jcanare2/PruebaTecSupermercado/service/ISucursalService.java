@@ -1,7 +1,7 @@
-package com.todocodeacademy.PruebaTecSupermercado.service;
+package com.jcanare2.PruebaTecSupermercado.service;
 
-import com.todocodeacademy.PruebaTecSupermercado.dto.SucursalDTO;
-import com.todocodeacademy.PruebaTecSupermercado.model.Sucursal;
+import com.jcanare2.PruebaTecSupermercado.dto.SucursalDTO;
+import com.jcanare2.PruebaTecSupermercado.model.Sucursal;
 
 import java.util.List;
 

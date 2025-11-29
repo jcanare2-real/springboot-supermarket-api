@@ -1,8 +1,8 @@
-package com.todocodeacademy.PruebaTecSupermercado.controller;
+package com.jcanare2.PruebaTecSupermercado.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.todocodeacademy.PruebaTecSupermercado.dto.ProductoDTO;
-import com.todocodeacademy.PruebaTecSupermercado.service.IProductoService;
+import com.jcanare2.PruebaTecSupermercado.dto.ProductoDTO;
+import com.jcanare2.PruebaTecSupermercado.service.IProductoService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;

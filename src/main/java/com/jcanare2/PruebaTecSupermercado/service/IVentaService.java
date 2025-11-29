@@ -1,7 +1,6 @@
-package com.todocodeacademy.PruebaTecSupermercado.service;
+package com.jcanare2.PruebaTecSupermercado.service;
 
-import com.todocodeacademy.PruebaTecSupermercado.dto.VentaDTO;
-import com.todocodeacademy.PruebaTecSupermercado.model.Venta;
+import com.jcanare2.PruebaTecSupermercado.dto.VentaDTO;
 
 import java.time.LocalDate;
 import java.util.List;

@@ -1,11 +1,11 @@
-package com.todocodeacademy.PruebaTecSupermercado.service.impl;
+package com.jcanare2.PruebaTecSupermercado.service.impl;
 
-import com.todocodeacademy.PruebaTecSupermercado.dto.ProductoDTO;
-import com.todocodeacademy.PruebaTecSupermercado.exception.NotFoundException;
-import com.todocodeacademy.PruebaTecSupermercado.mapper.Mapper;
-import com.todocodeacademy.PruebaTecSupermercado.model.Producto;
-import com.todocodeacademy.PruebaTecSupermercado.repository.ProductoRepository;
-import com.todocodeacademy.PruebaTecSupermercado.service.IProductoService;
+import com.jcanare2.PruebaTecSupermercado.dto.ProductoDTO;
+import com.jcanare2.PruebaTecSupermercado.exception.NotFoundException;
+import com.jcanare2.PruebaTecSupermercado.mapper.Mapper;
+import com.jcanare2.PruebaTecSupermercado.model.Producto;
+import com.jcanare2.PruebaTecSupermercado.repository.ProductoRepository;
+import com.jcanare2.PruebaTecSupermercado.service.IProductoService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

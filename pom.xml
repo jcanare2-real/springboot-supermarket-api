@@ -8,7 +8,7 @@
 		<version>3.5.7</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.todocodeacademy</groupId>
+	<groupId>com.jcanare2</groupId>
 	<artifactId>PruebaTecSupermercado</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>PruebaTecSupermercado</name>

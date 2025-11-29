@@ -1,18 +1,18 @@
-package com.todocodeacademy.PruebaTecSupermercado.service.impl;
+package com.jcanare2.PruebaTecSupermercado.service.impl;
 
-import com.todocodeacademy.PruebaTecSupermercado.dto.DetalleVentaDTO;
-import com.todocodeacademy.PruebaTecSupermercado.dto.VentaDTO;
-import com.todocodeacademy.PruebaTecSupermercado.exception.NotFoundException;
-import com.todocodeacademy.PruebaTecSupermercado.mapper.Mapper;
-import com.todocodeacademy.PruebaTecSupermercado.model.DetalleVenta;
-import com.todocodeacademy.PruebaTecSupermercado.model.Producto;
-import com.todocodeacademy.PruebaTecSupermercado.model.Sucursal;
-import com.todocodeacademy.PruebaTecSupermercado.model.Venta;
-import com.todocodeacademy.PruebaTecSupermercado.repository.ProductoRepository;
-import com.todocodeacademy.PruebaTecSupermercado.repository.SucursalRepository;
-import com.todocodeacademy.PruebaTecSupermercado.repository.VentaRepository;
-import com.todocodeacademy.PruebaTecSupermercado.service.ISucursalService;
-import com.todocodeacademy.PruebaTecSupermercado.service.IVentaService;
+import com.jcanare2.PruebaTecSupermercado.dto.DetalleVentaDTO;
+import com.jcanare2.PruebaTecSupermercado.dto.VentaDTO;
+import com.jcanare2.PruebaTecSupermercado.exception.NotFoundException;
+import com.jcanare2.PruebaTecSupermercado.mapper.Mapper;
+import com.jcanare2.PruebaTecSupermercado.model.DetalleVenta;
+import com.jcanare2.PruebaTecSupermercado.model.Producto;
+import com.jcanare2.PruebaTecSupermercado.model.Sucursal;
+import com.jcanare2.PruebaTecSupermercado.model.Venta;
+import com.jcanare2.PruebaTecSupermercado.repository.ProductoRepository;
+import com.jcanare2.PruebaTecSupermercado.repository.SucursalRepository;
+import com.jcanare2.PruebaTecSupermercado.repository.VentaRepository;
+import com.jcanare2.PruebaTecSupermercado.service.ISucursalService;
+import com.jcanare2.PruebaTecSupermercado.service.IVentaService;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -24,16 +24,14 @@ public class VentaServiceImpl implements IVentaService {
 
     private final VentaRepository repo;
 
-    private final SucursalRepository sucursalRepository;
-
     private final ProductoRepository productoRepository;
 
     private final ISucursalService sucursalService;
 
-    public VentaServiceImpl(VentaRepository repo, SucursalRepository sucursalRepository,
-                            ProductoRepository productoRepository, ISucursalService sucursalService) {
+    public VentaServiceImpl(VentaRepository repo,
+                            ProductoRepository productoRepository,
+                            ISucursalService sucursalService) {
         this.repo = repo;
-        this.sucursalRepository = sucursalRepository;
         this.productoRepository = productoRepository;
         this.sucursalService = sucursalService;
     }
@@ -54,7 +52,12 @@ public class VentaServiceImpl implements IVentaService {
 
     @Override
     public List<VentaDTO> getVentasBySucursal(Long idSucursal) {
-        return repo.findAll().stream().map(Mapper::toDTO).toList();
+        //Buscar Sucursal
+        Sucursal suc = sucursalService.getById(idSucursal);
+        if (suc == null){
+            throw  new NotFoundException("Sucursal no encontrada");
+        }
+        return repo.findBySucursal(suc).stream().map(Mapper::toDTO).toList();
     }
 
     @Override
@@ -72,7 +75,7 @@ public class VentaServiceImpl implements IVentaService {
             throw new RuntimeException("Debe incluir al menos un producto");
 
         //Buscar Sucursal
-        Sucursal suc = sucursalRepository.findById(ventaDTO.getIdSucursal()).orElse(null);
+        Sucursal suc = sucursalService.getById(ventaDTO.getIdSucursal());
         if (suc == null){
             throw  new NotFoundException("Sucursal no encontrada");
         }

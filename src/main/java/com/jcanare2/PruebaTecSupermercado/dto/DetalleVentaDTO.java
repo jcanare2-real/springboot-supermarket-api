@@ -1,4 +1,4 @@
-package com.todocodeacademy.PruebaTecSupermercado.dto;
+package com.jcanare2.PruebaTecSupermercado.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

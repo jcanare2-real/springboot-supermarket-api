@@ -1,4 +1,4 @@
-package com.todocodeacademy.PruebaTecSupermercado;
+package com.jcanare2.PruebaTecSupermercado;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

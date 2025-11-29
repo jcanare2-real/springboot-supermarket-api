@@ -1,4 +1,4 @@
-package com.todocodeacademy.PruebaTecSupermercado;
+package com.jcanare2.PruebaTecSupermercado;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

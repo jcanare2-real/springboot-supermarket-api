@@ -1,4 +1,4 @@
-package com.todocodeacademy.PruebaTecSupermercado.enums;
+package com.jcanare2.PruebaTecSupermercado.enums;
 
 public enum EstadoEnum {
     REGISTRADA,

@@ -1,4 +1,4 @@
-package com.todocodeacademy.PruebaTecSupermercado.exception;
+package com.jcanare2.PruebaTecSupermercado.exception;
 
 public class NotFoundException extends RuntimeException {
 
