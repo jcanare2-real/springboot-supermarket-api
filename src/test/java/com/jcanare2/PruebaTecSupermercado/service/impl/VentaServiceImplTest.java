@@ -170,7 +170,7 @@ class VentaServiceImplTest {
                 .build();
 
         Sucursal nuevaSucursal = Sucursal.builder().id(idNuevaSucursal).nombre("Sur").build();
-        
+
         // Creamos un detalle ficticio que sume 999.0 para que el Mapper devuelva el total correcto
         Producto prodDummy = Producto.builder().id(9L).nombre("Dummy").precio(totalEsperado).build();
         DetalleVenta detalleDummy = DetalleVenta.builder()
