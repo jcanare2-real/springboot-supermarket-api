@@ -1,4 +1,4 @@
-# Spring Boot Supermarket API 🛒
+# Supermarket Management API (Java 17 & Spring Boot 3 + JWT)
 
 RESTful API for a supermarket management system. Originally completed as a technical assessment in under 3 hours using **Java 17** & **Spring Boot 3**, now evolved into a production-ready architecture with **Security** and **Testing**.
 
@@ -7,7 +7,7 @@ RESTful API for a supermarket management system. Originally completed as a techn
 ## 🚀 Key Differences & Improvements
 Unlike the original implementation, this project focuses on industry best practices, clean architecture, and **Security**:
 
-- **🛡️ Enterprise-Grade Security:** Full implementation of **Spring Security 6** with **Stateless JWT (JSON Web Tokens)** authentication. It includes Role-Based Access Control (RBAC) to protect sensitive endpoints.
+- **🛡️ Robust Security with JWT and RBAC:** Full implementation of **Spring Security 6** with **Stateless JWT (JSON Web Tokens)** authentication. It includes Role-Based Access Control (RBAC) to protect sensitive endpoints.
 - **Dependency Injection by Constructor:** Replaced field injection (`@Autowired` on fields) with constructor-based injection to ensure immutability and easier unit testing.
 - **Robust Error Handling:** Implemented a `GlobalExceptionHandler` (`@ControllerAdvice`) to catch exceptions centrally.
 - **Standardized API Responses:** All errors return a consistent `ErrorResponse` JSON structure (timestamp, status, error, message), avoiding raw stack traces.
