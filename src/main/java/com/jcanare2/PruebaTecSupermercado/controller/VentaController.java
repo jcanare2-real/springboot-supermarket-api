@@ -10,6 +10,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
@@ -36,6 +37,7 @@ public class VentaController {
                             content = @Content(schema = @Schema(implementation = VentaDTO.class)))
             }
     )
+    @PreAuthorize("hasAnyRole('ADMIN', 'SELLER')")
     @GetMapping
     public ResponseEntity<List<VentaDTO>> listar(){
         return ResponseEntity.ok(this.ventasService.getAll());
@@ -59,6 +61,7 @@ public class VentaController {
                             description = "Solicitud inválida (ej. datos de ítems de venta incorrectos).")
             }
     )
+    @PreAuthorize("hasAnyRole('ADMIN', 'SELLER')")
     @PostMapping
     public ResponseEntity<VentaDTO> crear(@Valid  @RequestBody VentaDTO ventaDTO){
         VentaDTO created = this.ventasService.create(ventaDTO);
@@ -89,6 +92,7 @@ public class VentaController {
                             description = "Datos de solicitud inválidos.")
             }
     )
+    @PreAuthorize("hasAnyRole('ADMIN')")
     @PutMapping("/{idVenta}")
     public ResponseEntity<VentaDTO> actualizar(@PathVariable Long idVenta,
                                                @Valid @RequestBody VentaDTO ventaDTO){
@@ -115,6 +119,7 @@ public class VentaController {
                             description = "Venta no encontrada.")
             }
     )
+    @PreAuthorize("hasAnyRole('ADMIN')")
     @DeleteMapping("/{idVenta}")
     public ResponseEntity<Void> eliminar(@PathVariable Long idVenta){
         this.ventasService.delete(idVenta);

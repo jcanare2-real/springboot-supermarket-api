@@ -10,6 +10,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
@@ -30,6 +31,7 @@ public class ProductoController {
             summary = "Obtener todos los productos",
             description = "Devuelve una lista con todos los productos disponibles en el inventario.")
     @ApiResponse(responseCode = "200", description = "Lista de productos recuperada con éxito")
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER', 'SELLER')")
     @GetMapping
     public ResponseEntity<List<ProductoDTO>> listar(){
         return ResponseEntity.ok(this.productoService.getAll());
@@ -53,6 +55,7 @@ public class ProductoController {
                             description = "Solicitud inválida (Errores de validación @Valid)")
             }
     )
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
     public ResponseEntity<ProductoDTO> crear(@Valid  @RequestBody ProductoDTO productoDTO){
         ProductoDTO creado = this.productoService.create(productoDTO);
@@ -70,6 +73,7 @@ public class ProductoController {
                     @ApiResponse(responseCode = "404", description = "Producto no encontrado")
             }
     )
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/{idProducto}")
     public ResponseEntity<ProductoDTO> actualizar(@PathVariable Long idProducto,
                                                   @Valid @RequestBody ProductoDTO productoDTO){
@@ -88,6 +92,7 @@ public class ProductoController {
                     @ApiResponse(responseCode = "404", description = "Producto no encontrado")
             }
     )
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{idProducto}")
     public ResponseEntity<Void> eliminar(@PathVariable  Long idProducto){
         this.productoService.delete(idProducto);
