@@ -10,6 +10,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
@@ -36,6 +37,7 @@ public class SucursalController {
                             content = @Content(schema = @Schema(implementation = SucursalDTO.class)))
             }
     )
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER', 'SELLER')")
     @GetMapping
     public ResponseEntity<List<SucursalDTO>> listar(){
         return ResponseEntity.ok(this.sucursalService.getAll());
@@ -59,6 +61,7 @@ public class SucursalController {
                             description = "Solicitud inválida (errores de validación o datos incorrectos).")
             }
     )
+    @PreAuthorize("hasAnyRole('ADMIN')")
     @PostMapping
     public ResponseEntity<SucursalDTO> crear(@Valid @RequestBody SucursalDTO sucursalDTO){
 
@@ -90,6 +93,7 @@ public class SucursalController {
                             description = "Datos de solicitud inválidos.")
             }
     )
+    @PreAuthorize("hasAnyRole('ADMIN')")
     @PutMapping("/{idSucursal}")
     public ResponseEntity<SucursalDTO> actualizar(@PathVariable Long idSucursal,
                                                   @Valid @RequestBody SucursalDTO sucursalDTO){
@@ -116,6 +120,7 @@ public class SucursalController {
                             description = "Sucursal no encontrada.")
             }
     )
+    @PreAuthorize("hasAnyRole('ADMIN')")
     @DeleteMapping("/{idSucursal}")
     public ResponseEntity<Void> eliminar(@PathVariable Long idSucursal){
         this.sucursalService.delete(idSucursal);
