@@ -5,6 +5,7 @@ import com.jcanare2.PruebaTecSupermercado.dto.LoginRequestDTO;
 import com.jcanare2.PruebaTecSupermercado.dto.RegisterRequestDTO;
 import com.jcanare2.PruebaTecSupermercado.service.AuthenticationService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,7 +21,12 @@ public class AuthController {
 
     @PostMapping("/register")
     public ResponseEntity<AuthResponseDTO> register(@RequestBody RegisterRequestDTO request) {
-        return ResponseEntity.ok(service.register(request));
+
+        AuthResponseDTO response = service.register(request);
+
+        return ResponseEntity
+                .status(HttpStatus.CREATED)
+                .body(response);
     }
 
     @PostMapping("/login")

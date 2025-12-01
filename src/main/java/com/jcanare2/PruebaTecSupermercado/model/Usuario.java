@@ -46,7 +46,8 @@ public class Usuario implements UserDetails {
     public Collection<? extends GrantedAuthority> getAuthorities() {
         // Retornamos el rol como autoridad. Spring espera "ROLE_" a veces,
         // pero para validaciones simples el nombre del enum sirve.
-        return List.of(new SimpleGrantedAuthority(role.name()));
+        return List.of(new SimpleGrantedAuthority("ROLE_" + role.name()));
+
     }
 
     @Override
